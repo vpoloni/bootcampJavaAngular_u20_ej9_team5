@@ -1,7 +1,6 @@
 package ej9;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -33,35 +32,11 @@ public class JuegoMemoria extends JFrame {
 	// variables para guardar colores de botones clickados
 	Color color1, color2;
 
-	// variables para guardar índices de botónes clickados
+	// variables para guardar índices de botones clickados
 	int indexBtn1, indexBtn2;
 
 	// variables para guardar el estado de botones clickados (si son iguales o no)
 	boolean coloresIguales, volverAlEstadoInicial;
-
-
-	// el método main
-	public static void main(String[] args) {
-		
-		EventQueue.invokeLater(new Runnable() {
-			
-			public void run() {
-				try {
-					JuegoMemoria frame = new JuegoMemoria();
-					
-					frame.setVisible(true);
-
-					frame.poblarColores();
-
-					frame.agregarAddListener();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	
 	public JuegoMemoria() {
 		
@@ -198,7 +173,8 @@ public class JuegoMemoria extends JFrame {
 	}
 
 	public Color devolverColor(int i) {
-		// llamamos a la función para comprobar el estado de los botones clickados
+		
+		// llamamos a la función para comprobar el estado de botones clickados
 		cambiarEstadoBotones();
 
 		// si variable color1 es null
@@ -232,6 +208,7 @@ public class JuegoMemoria extends JFrame {
 
 	// función que mira si se cumplen las condiciones para cambiar el estado de los botones clickados
 	public void cambiarEstadoBotones() {
+		
 		if (coloresIguales) {
 			// si son iguales - serán invisibles
 			arrayBotones.get(indexBtn1).setVisible(false);
